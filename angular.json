@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "desafio-frontend": "apps/desafio-frontend",
+    "desafio-frontend-e2e": "apps/desafio-frontend-e2e"
+  }
+}
