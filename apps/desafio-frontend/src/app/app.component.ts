@@ -1,33 +1,40 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import {
-  IPokemonList,
-  IPokemonResults,
+  IPokemon,
 } from './modules/pokemon/models/pokemon.interface';
-import { loadPokemons } from './state/actions/pokemon.actions';
+import { loadPokemons, next, previous } from './state/actions/pokemon.actions';
 import { AppState } from './state/reducers/pokemon.reducers';
 import {
-  selectPokelist,
-  selectState,
+  selectPageable,
+  selectPokemons,
 } from './state/selectors/pokemon.selectors';
 @Component({
   selector: 'leonardomartins-root',
-  template: `
-    <li *ngFor="let poke of pokelist">
-      {{ poke.url }}
-    </li>
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'desafio-frontend';
-  pokelist: IPokemonResults[] = [];
+  pokemons: IPokemon[] = [];
+  pageable = 0;
   constructor(private store: Store<AppState>) {}
   ngOnInit() {
-    this.store.dispatch(loadPokemons());
-    this.store.select(selectPokelist).subscribe((pokelist) => {
-      this.pokelist = pokelist;
+    this.store.dispatch(loadPokemons({pageable:this.pageable}));
+    this.store.select(selectPokemons).subscribe((pokemons) => {
+      this.pokemons = pokemons;
+      console.log(pokemons)
     });
+    this.store.select(selectPageable).subscribe((pageable) => {
+      this.pageable = pageable;
+      console.log(pageable);
+      this.store.dispatch(loadPokemons({pageable:this.pageable}));
+    });
+  }
+  next(){
+    this.store.dispatch(next())
+  }
+  previous(){
+    this.store.dispatch(previous())
   }
 }

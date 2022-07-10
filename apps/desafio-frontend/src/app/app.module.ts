@@ -9,13 +9,16 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { PokemonEffects } from './state/effects/pokemon.effects';
 import { pokemonReducer } from './state/reducers/pokemon.reducers';
 
+import {ComponentsModule} from '@leonardomartins/components'
+
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({ pokemons: pokemonReducer }),
     EffectsModule.forRoot([PokemonEffects]),
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
