@@ -20,11 +20,11 @@ export class CardComponent {
   @Input() habilitateFavoritePrimaryBtn!: boolean;
   @Input() template!: TemplateRef<any>;
 
-  @Output() btnEmitter: EventEmitter<any>=new EventEmitter();
+  @Output() btnEmitter: EventEmitter<any> = new EventEmitter();
 
   isFavorite = false;
 
-  constructor(private localStorageService : LocalStorageService) {}
+  constructor(private localStorageService: LocalStorageService) {}
 
   ngOnInit(): void {
     if (this.item && this.localStorageService.get(this.item.name)) {
@@ -32,13 +32,16 @@ export class CardComponent {
     }
   }
 
-  formatString(str: string): string {
-    return str[0].toUpperCase() + str.substr(1);
+  formatTitle(str: string):string {
+    if (str) {
+      return str[0].toUpperCase() + str.substr(1);
+    }
+    return ''
   }
 
   primaryButtonEmitter(boo: boolean) {
     if (boo == true) {
-      this.btnEmitter.emit(this.item)
+      this.btnEmitter.emit(this.item);
     }
   }
 }
