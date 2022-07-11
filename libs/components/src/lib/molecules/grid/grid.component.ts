@@ -12,13 +12,5 @@ export class GridComponent {
 
   @Output() favorite: EventEmitter<any>=new EventEmitter();
 
-  constructor(){
-    console.log(this.itens);
-  }
-  
-  updateFav(obj: any) {
-    if (obj) {
-      this.favorite.emit(obj)
-    }
-  }
+  constructor(){}
 }
