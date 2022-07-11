@@ -15,3 +15,8 @@ Run `ng build desafio-frontend` to build the project. The build artifacts will b
 
 Run `ng test ` to execute the unit tests on the main project.
 Run `ng test components ` to execute the unit tests on the components lib.
+
+## Running lint
+
+Run `ng lint ` to execute lint on the main project.
+Run `ng lint components ` to execute lint on the components lib.
