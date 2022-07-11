@@ -3,7 +3,7 @@
 # Leonardomartins
 
 ## Instalation
-Clone and use npm install for dependencies.
+Clone and use `npm install` for dependencies.
 ## Development server
 
 Run `ng serve desafio-frontend` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
