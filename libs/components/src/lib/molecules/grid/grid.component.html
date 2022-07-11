@@ -1,0 +1,7 @@
+<!-- Container Grid -->
+<div id="gridContainer" class="d-flex flex-row flex-wrap">
+    <!-- Container Card -->
+    <div id="cardContainer" *ngFor="let item of itens">
+        <ngContainer [ngTemplateOutlet]="templateGrid" [ngTemplateOutletContext]="{item:item}"></ngContainer>
+    </div>
+</div>

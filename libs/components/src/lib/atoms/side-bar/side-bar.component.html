@@ -1,0 +1,13 @@
+<div class="side-navbar d-flex flex-column align-items-center">
+  <svg-icon
+    [src]="menuIcon"
+    [svgStyle]="{ 'width.vh': 5, fill: 'white' }"
+  ></svg-icon>
+  <a *ngFor="let li of menuItens" [href]="li.rout">
+    <svg-icon
+      [src]="li.icon"
+      [svgStyle]="{ 'width.vh': 3, fill: 'white', 'padding-top': '3vh' }"
+    >
+    </svg-icon>
+  </a>
+</div>

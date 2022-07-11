@@ -1,0 +1,17 @@
+@import '../../styles/stylesheet.scss';
+#card{
+    width:25vw; 
+    height:25vh;
+    border-radius: 10px;
+}
+#header{
+    background-color: $title-dark; 
+    color: $font-white;
+    padding-top:1.2rem;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 6vh;
+}
+.h1{
+    font-size: 1.6rem;
+}

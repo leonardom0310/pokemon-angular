@@ -1,8 +1,4 @@
-<leonardomartins-side-bar></leonardomartins-side-bar>
-<li *ngFor="let poke of pokemons">
-  {{ poke.name }}
-</li>
-
-<button (click)="previous()">Previous</button>
-<button (click)="next()">Next</button>
-
+<div class="d-flex flex-row">
+  <app-side-bar [menuIcon]="'assets/pokeball.svg'"></app-side-bar>
+  <router-outlet></router-outlet>
+</div>

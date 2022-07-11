@@ -1,0 +1,53 @@
+@import '../../styles/stylesheet.scss';
+#container{
+    width: 96vw;
+    height: 100vh; 
+    padding-left:10rem;
+    padding-top: 1.5vh; 
+    background-color: $backgroud-color;
+}
+#title{
+    color: $title-dark;
+    font-size: 2.0rem;
+    font-weight: 900;
+}
+#search{
+    width: 60rem;margin-left: 1rem;
+}
+.btn{
+    margin-left: 2rem;
+    width:10vw;
+    border-radius: 20px;
+    height: 5vh;
+}
+#pagText{
+    justify-content: center;
+    align-items: center; 
+    font-size: 16px;color: $font-dark;
+    padding-top: 0.5vh;
+}
+#header{
+    width:50rem;
+    height:3rem;
+    padding-left: 2rem;
+}
+#headerContainer{
+    width:120rem;
+    height:6rem;
+}
+.items{
+    font-size: 1vw;
+}
+.list{
+    margin: 0.2rem;
+}
+.card-body{
+    color:$font-dark;
+}
+#sprite{
+    width: 6vw;
+    height: 10vh;
+}
+.h3{
+    font-size:1.4vw
+}

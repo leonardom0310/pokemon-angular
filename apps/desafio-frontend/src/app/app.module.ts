@@ -10,15 +10,18 @@ import { PokemonEffects } from './state/effects/pokemon.effects';
 import { pokemonReducer } from './state/reducers/pokemon.reducers';
 
 import {ComponentsModule} from '@leonardomartins/components'
+import { AppRoutingModule } from './app-routing.module';
+import { PokelistComponent } from './modules/pokemon/components/pokelist.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent],
+  declarations: [AppComponent, NxWelcomeComponent,PokelistComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({ pokemons: pokemonReducer }),
     EffectsModule.forRoot([PokemonEffects]),
     HttpClientModule,
-    ComponentsModule
+    ComponentsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

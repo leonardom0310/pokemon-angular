@@ -1,0 +1,58 @@
+<ng-template let-item="item" #grid>
+  <app-card
+    [item]="item"
+    (btnEmitter)="updateFav($event)"
+    [template]="templateCard"
+    [title]="item.name"
+    [iconCard]="'assets/pokeball.svg'"
+    [habilitateFavoritePrimaryBtn]="true"
+  ></app-card>
+</ng-template>
+
+<ng-template #templateCard let-item="item">
+  <img id="sprite" [src]="item!.sprites.front_default" />
+  <div class="d-flex flex-row">
+    <div class="list">
+      <h3 class="h3">Types:</h3>
+      <ul>
+        <li class="items" *ngFor="let i of item?.types">
+          {{ formatString(i.type.name) }}
+        </li>
+      </ul>
+    </div>
+    <div class="list">
+      <h3 class="h3">Abilities:</h3>
+      <ul>
+        <li class="items" *ngFor="let i of item?.abilities">
+          {{ formatString(i.ability.name) }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>
+
+<div id="container">
+  <div class="d-flex flex-row justify-content-between" id="header">
+    <h1 class="h1" id="title">{{ title }}</h1>
+    <div
+      class="d-flex flex-row justify-content-start align"
+      id="pagination"
+      *ngIf="pagination"
+    >
+      <button (click)="previous()" type="button" class="btn btn-primary">
+        Previous
+      </button>
+      <button (click)="next()" type="button" class="btn btn-primary">
+        Next
+      </button>
+    </div>
+    <!-- Grid -->
+  </div>
+  <div class="card-body">
+    <app-grid
+      [itens]="itensListCard"
+      (favorite)="updateFav($event)"
+      [templateGrid]="grid"
+    ></app-grid>
+  </div>
+</div>
