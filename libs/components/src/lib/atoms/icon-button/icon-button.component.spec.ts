@@ -8,9 +8,8 @@ describe('icon-buttonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IconButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [IconButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -24,11 +23,11 @@ describe('icon-buttonComponent', () => {
   });
 
   it('should emit on click', () => {
-    const spyEmitter = jest.spyOn(component,'emitEvent');
+    const spyEmitter = jest.spyOn(component, 'emitEvent');
     const nativeElement = fixture.nativeElement;
     const button = nativeElement.querySelector('button');
     button.dispatchEvent(new Event('click'));
     fixture.detectChanges();
     expect(spyEmitter).toHaveBeenCalled();
- });
+  });
 });
