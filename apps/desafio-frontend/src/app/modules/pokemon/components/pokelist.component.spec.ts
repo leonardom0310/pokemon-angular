@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { next } from '../../../state/actions/pokemon.actions';
 import {
   selectPageable,
   selectPokemons,

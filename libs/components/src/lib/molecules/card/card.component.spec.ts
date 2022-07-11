@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
 
-describe('PokecardComponent', () => {
+describe('CardComponent', () => {
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
 
@@ -38,40 +38,31 @@ describe('PokecardComponent', () => {
     component.isFavorite = true;
     component.habilitateFavoritePrimaryBtn = true;
     fixture.detectChanges(); 
-    const spyOnEmiter = jest.spyOn(component,'primaryButtonEmitter');
     const nativeElement = fixture.nativeElement;
     const iconFavorite = nativeElement.querySelector('.isFavorite');
     const iconNotFavorite = nativeElement.querySelector('.notFavorite');
-    iconFavorite.click();
     expect(iconFavorite).toBeDefined();
     expect(iconNotFavorite).toBe(null);
-    expect(spyOnEmiter).toHaveBeenCalled();
   })
 
   it('should render the not favorite icon and emit upon clicking',()=>{
     component.isFavorite = false;
     component.habilitateFavoritePrimaryBtn = true;
     fixture.detectChanges(); 
-    const spyOnEmiter = jest.spyOn(component,'primaryButtonEmitter');
     const nativeElement = fixture.nativeElement;
     const iconFavorite = nativeElement.querySelector('.isFavorite');
     const iconNotFavorite = nativeElement.querySelector('.notFavorite');
-    iconNotFavorite.click();
     expect(iconFavorite).toBe(null);
     expect(iconNotFavorite).toBeDefined();
-    expect(spyOnEmiter).toHaveBeenCalled();
   });
 
-  it('should render the regular icon button and emit upon clicking',()=>{
+  it('should render the regular icon button',()=>{
     component.isFavorite = true;
     component.habilitateFavoritePrimaryBtn = false;
     fixture.detectChanges(); 
-    const spyOnEmiter = jest.spyOn(component,'primaryButtonEmitter');
     const nativeElement = fixture.nativeElement;
     const regularButton = nativeElement.querySelector('.regularButton');
-    regularButton.click();
     expect(regularButton).toBeDefined();
-    expect(spyOnEmiter).toHaveBeenCalled();
   });
 
   it('should not render any button if isFavorite&&habilitateFavoritePrimaryBtn = false',()=>{
