@@ -52,7 +52,9 @@ export class PokelistComponent implements OnInit {
     this.store.dispatch(next());
   }
   previous() {
-    this.store.dispatch(previous());
+    if (this.pageable > 0) {
+      this.store.dispatch(previous());
+    }
   }
 
   updateFav(pokemon: IPokemon) {
