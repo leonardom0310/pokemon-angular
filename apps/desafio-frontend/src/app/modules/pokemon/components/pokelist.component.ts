@@ -27,15 +27,25 @@ export class PokelistComponent implements OnInit {
     private localStorageService: LocalStorageService
   ) {}
   ngOnInit() {
+    this.setInitialRules();
+  }
+
+  setInitialRules() {
     this.store.dispatch(loadPokemons({ pageable: this.pageable }));
-    this.store.select(selectPokemons).subscribe((pokemons) => {
-      this.pokemons = pokemons;
-      console.log(pokemons);
-    });
+    this.getPokemons();
+    this.getPageable();
+  }
+
+  getPageable() {
     this.store.select(selectPageable).subscribe((pageable) => {
       this.pageable = pageable;
-      console.log(pageable);
       this.store.dispatch(loadPokemons({ pageable: this.pageable }));
+    });
+  }
+
+  getPokemons() {
+    this.store.select(selectPokemons).subscribe((pokemons) => {
+      this.pokemons = pokemons;
     });
   }
   next() {
