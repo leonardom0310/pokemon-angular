@@ -17,7 +17,7 @@ export class IconButtonComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  disparaEvento(){
+  emitEvent(){
     this.click.emit(true)
   }
 
