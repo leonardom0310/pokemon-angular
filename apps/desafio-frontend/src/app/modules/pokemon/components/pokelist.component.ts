@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { LocalStorageService } from 'libs/components/src/lib/services/local-storage.service';
 import { IPokemon } from '../../../modules/pokemon/models/pokemon.interface';
 import {
   loadPokemons,
@@ -11,7 +12,7 @@ import {
   selectPageable,
   selectPokemons,
 } from '../../../state/selectors/pokemon.selectors';
-import { LocalStorageService } from '../../../shared/services/local-storage.service';
+
 @Component({
   selector: 'leonardomartins-pokelist',
   templateUrl: './pokelist.component.html',
