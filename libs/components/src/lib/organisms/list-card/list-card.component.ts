@@ -21,9 +21,6 @@ export class ListCardComponent {
   searchField = '';
   isFavorite = false;
 
-  change(event: any) {
-    this.searchField = event.target.value;
-  }
   previous() {
     this.previousEvent.emit();
   }

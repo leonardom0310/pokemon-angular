@@ -5,7 +5,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { PokemonEffects } from './state/effects/pokemon.effects';
 import { pokemonReducer } from './state/reducers/pokemon.reducers';
 
@@ -14,7 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PokelistComponent } from './modules/pokemon/components/pokelist.component';
 
 @NgModule({
-  declarations: [AppComponent, NxWelcomeComponent,PokelistComponent],
+  declarations: [AppComponent,PokelistComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({ pokemons: pokemonReducer }),
