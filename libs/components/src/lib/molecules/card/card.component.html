@@ -3,12 +3,12 @@
         <h1 class="h1">{{formatTitle(title)}}</h1>
         <div class="justify-content-center">
             <div class="justify-content-center">
-                <app-icon-button *ngIf="this.isFavorite && this.habilitateFavoritePrimaryBtn" icon="assets/regular/heart-filled.svg" size="4"
-                    color="#d9534f" (click)="primaryButtonEmitter($event)" class="isFavorite"></app-icon-button>
-                <app-icon-button *ngIf="!this.isFavorite && this.habilitateFavoritePrimaryBtn" icon="assets/regular/heart.svg" size="4"
-                    (click)="primaryButtonEmitter($event)" class="notFavorite" color="white"></app-icon-button>
-                <app-icon-button *ngIf="this.isFavorite && !this.habilitateFavoritePrimaryBtn" icon="icon-button" size="4" color="#d9534f"
-                    (click)="primaryButtonEmitter($event) " class="regularButton"></app-icon-button>
+                <leonardomartins-icon-button *ngIf="this.isFavorite && this.habilitateFavoritePrimaryBtn" icon="assets/regular/heart-filled.svg" size="4"
+                    color="#d9534f" (clickEmitter)="primaryButtonEmitter($event)" class="isFavorite"></leonardomartins-icon-button>
+                <leonardomartins-icon-button *ngIf="!this.isFavorite && this.habilitateFavoritePrimaryBtn" icon="assets/regular/heart.svg" size="4"
+                    (clickEmitter)="primaryButtonEmitter($event)" class="notFavorite" color="white"></leonardomartins-icon-button>
+                <leonardomartins-icon-button *ngIf="this.isFavorite && !this.habilitateFavoritePrimaryBtn" icon="icon-button" size="4" color="#d9534f"
+                    (clickEmitter)="primaryButtonEmitter($event) " class="regularButton"></leonardomartins-icon-button>
                 <svg-icon [src]="iconCard" [svgStyle]="{ 'width.vh':4,'fill':'white' }"></svg-icon>
             </div>
         </div>

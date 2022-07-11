@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 
 @Component({
-  selector: 'app-grid',
+  selector: 'leonardomartins-grid',
   templateUrl: './grid.component.html',
   styleUrls: ['./grid.component.scss']
 })
@@ -12,5 +12,4 @@ export class GridComponent {
 
   @Output() favorite: EventEmitter<any>=new EventEmitter();
 
-  constructor(){}
 }

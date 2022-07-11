@@ -1,12 +1,12 @@
 <ng-template let-item="item" #templateListCard>
-    <app-card
+    <leonardomartins-card
       [item]="item"
       (btnEmitter)="updateFav($event)"
       [template]="templateCard"
       [title]="item.name"
       [iconCard]="'assets/pokeball.svg'"
       [habilitateFavoritePrimaryBtn]="true"
-    ></app-card>
+    ></leonardomartins-card>
   </ng-template>
   
   <ng-template #templateCard let-item="item">
@@ -31,7 +31,7 @@
     </div>
   </ng-template>
 
-<app-list-card
+<leonardomartins-list-card
   [itensListCard]="pokemons"
   (favorite)="updateFav($event)"
   [title]="'Pokemons'"
@@ -39,4 +39,4 @@
   (previousEvent)="previous()"
   (nextEvent)="next()"
   [templateListCard]="templateListCard"
-></app-list-card>
+></leonardomartins-list-card>

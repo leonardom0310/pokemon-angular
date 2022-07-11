@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   Input,
   Output,
   EventEmitter,
@@ -8,7 +7,7 @@ import {
 } from '@angular/core';
 import { LocalStorageService } from '../../services/local-storage.service';
 @Component({
-  selector: 'app-card',
+  selector: 'leonardomartins-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
