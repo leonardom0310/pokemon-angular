@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-list-card',
@@ -12,6 +12,7 @@ export class ListCardComponent {
   @Input() pagination!: boolean;
   @Input() totalPages!: number;
   @Input() currentPage!: number;
+  @Input() templateListCard! : TemplateRef<any>;  
 
   @Output() favorite: EventEmitter<any> = new EventEmitter();
   @Output() previousEvent: EventEmitter<boolean> = new EventEmitter();
@@ -33,8 +34,5 @@ export class ListCardComponent {
     if (obj) {
       this.favorite.emit(obj);
     }
-  }
-  formatString(str: string): string {
-    return str[0].toUpperCase() + str.substr(1);
   }
 }

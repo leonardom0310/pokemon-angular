@@ -1,5 +1,5 @@
-import { Action, createReducer, on } from '@ngrx/store';
-import { IPokemon, IPokemonList, IPokemonResults } from '../../modules/pokemon/models/pokemon.interface';
+import { createReducer, on } from '@ngrx/store';
+import { IPokemon } from '../../modules/pokemon/models/pokemon.interface';
 import * as PokemonActions from '../actions/pokemon.actions';
 
 export interface AppState {

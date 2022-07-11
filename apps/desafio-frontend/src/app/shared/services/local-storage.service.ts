@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +9,7 @@ export class LocalStorageService {
     this.storage = window.localStorage;
   }
 
-  set(key: string, value: any): boolean {
+  set(key: string, value: unknown): boolean {
     if (this.storage) {
       this.storage.setItem(key, JSON.stringify(value));
       return true;
@@ -18,12 +17,12 @@ export class LocalStorageService {
     return false;
   }
 
-  get(key: string): any {
+  get(key: string): unknown {
     if (this.storage) {
       const storageItem = this.storage.getItem(key);
       return storageItem ? JSON.parse(storageItem) : null;
     }
-    return null;
+    return {};
   }
 
   remove(key: string): void {

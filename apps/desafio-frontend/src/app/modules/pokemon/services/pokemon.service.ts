@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, merge, Observable, pipe, retry } from 'rxjs';
-import {
-  IPokemon,
-  IPokemonList,
-  IPokemonResults,
-} from '../models/pokemon.interface';
+import { map, merge, Observable, retry } from 'rxjs';
+import { IPokemon, IPokemonList } from '../models/pokemon.interface';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../state/reducers/pokemon.reducers';
 @Injectable({
@@ -40,7 +36,9 @@ export class PokemonService {
             (pokemon) => {
               pokemons.push(pokemon);
             },
-            () => {},
+            () => {
+              null;
+            },
             () => {
               obs.next(pokemons);
               obs.complete();

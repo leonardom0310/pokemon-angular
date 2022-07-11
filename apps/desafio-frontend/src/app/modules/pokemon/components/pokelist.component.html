@@ -1,1 +1,42 @@
-<app-list-card [itensListCard]="pokemons" (favorite)="updateFav($event)"  [title]="'Pokemons'" [pagination]="true" (previousEvent)="previous()" (nextEvent)="next()"  ></app-list-card>
+<ng-template let-item="item" #templateListCard>
+    <app-card
+      [item]="item"
+      (btnEmitter)="updateFav($event)"
+      [template]="templateCard"
+      [title]="item.name"
+      [iconCard]="'assets/pokeball.svg'"
+      [habilitateFavoritePrimaryBtn]="true"
+    ></app-card>
+  </ng-template>
+  
+  <ng-template #templateCard let-item="item">
+    <img id="sprite" [src]="item!.sprites.front_default" />
+    <div class="d-flex flex-row">
+      <div class="list">
+        <h3 class="h3">Types:</h3>
+        <ul>
+          <li class="items" *ngFor="let i of item?.types">
+            {{ formatString(i.type.name) }}
+          </li>
+        </ul>
+      </div>
+      <div class="list">
+        <h3 class="h3">Abilities:</h3>
+        <ul>
+          <li class="items" *ngFor="let i of item?.abilities">
+            {{ formatString(i.ability.name) }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ng-template>
+
+<app-list-card
+  [itensListCard]="pokemons"
+  (favorite)="updateFav($event)"
+  [title]="'Pokemons'"
+  [pagination]="true"
+  (previousEvent)="previous()"
+  (nextEvent)="next()"
+  [templateListCard]="templateListCard"
+></app-list-card>
